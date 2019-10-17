@@ -1,0 +1,34 @@
+﻿.MeetingsTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.MeetingsTable td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+.MeetingsTable tr:nth-child(even) {
+    background-color: #b9ddff;
+}
+
+.MeetingsTable tr:hover {
+    background-color: #15b7ff;
+}
+
+.MeetingsTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #363636;
+    color: white;
+}
+
+h3 {
+    display:inline;
+}
+
+
+
+

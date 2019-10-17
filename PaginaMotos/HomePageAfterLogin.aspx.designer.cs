@@ -7,30 +7,20 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PaginaMotos
-{
-
-    public partial class _Default
-    {
-
+namespace PaginaMotos {
+    
+    
+    public partial class HomePageAfterLogin {
+        
         /// <summary>
-        /// Control form1.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// Control btnAdd.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
-
+        protected global::System.Web.UI.WebControls.Button Button1;
+        
         /// <summary>
         /// Control GridView1.
         /// </summary>
@@ -39,15 +29,14 @@ namespace PaginaMotos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-
+        
         /// <summary>
-        /// Control Kdds.
+        /// Control Calendar1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Kdds;
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
     }
 }
-
