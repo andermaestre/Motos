@@ -1,0 +1,36 @@
+﻿body {
+}
+
+.login1 {
+    display: flex;
+    justify-content: center;
+}
+
+.duo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+}
+
+button {
+    background: none;
+    border-color: darkblue;
+}
+
+    button:hover {
+        background-color: aqua;
+        border: hidden;
+    }
