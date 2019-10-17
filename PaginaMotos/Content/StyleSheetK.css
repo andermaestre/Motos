@@ -2,6 +2,7 @@
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    
 }
 
 .MeetingsTable td, #customers th {
@@ -29,6 +30,9 @@ h3 {
     display:inline;
 }
 
+.kdds{
+    margin-bottom:50px;
+}
 
 
 
