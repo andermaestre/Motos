@@ -21,7 +21,7 @@ namespace PaginaMotos
         {
 
             //tbUser;//usuario introducido
-            int id;
+            
             string strConnection = ConfigurationManager.ConnectionStrings["DAM_Compartido_DEVConnectionString"].ToString();
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
@@ -32,22 +32,48 @@ namespace PaginaMotos
                 cmd.CommandType = CommandType.StoredProcedure;
                 
                 cmd.Parameters.AddWithValue("@Nick", tbUser.Text);
+                Int32 id;
 
 
-
-                // string query2 = "EXEC Moto.ContraseXId " + id;
+                
                 sqlConnection.Open();
                 SqlDataReader sqlreader = cmd.ExecuteReader();
-                if (sqlreader.HasRows)
+                if (sqlreader.Read())
                 {
-                   id = int.Parse(sqlreader[0].ToString());
-                }
-                tbPass.Text = id.ToString();
+                   id = sqlreader.GetInt32(0);
 
-                /*if (tbPass.Equals(resppa))
+                }
+                else
                 {
-                    Response.Redirect("~/HomePageAfterLogin.aspx");
-                }*/
+                    id = 0;
+                }
+                sqlreader.Close();
+                
+                string query2 = "Moto.PassConNick";
+                SqlCommand cmd2 = new SqlCommand(query2, sqlConnection);
+                cmd2.CommandType = CommandType.StoredProcedure;
+                cmd2.Parameters.AddWithValue("@Id", id);
+                string pass;
+                SqlDataReader sqlreader2 = cmd2.ExecuteReader();
+                if (sqlreader2.Read())
+                {
+                    pass = sqlreader2.GetString(0);
+
+                }
+                else
+                {
+                    pass = "ERROR";
+                }
+
+                if (pass.Equals(tbPass.Text))
+                {
+                    Response.Redirect("~\\HomePageAfterLogin.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>Alert(\"Mal!!\")");
+                }
+
             }
         }
 
