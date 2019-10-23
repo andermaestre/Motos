@@ -7,7 +7,7 @@
             <div class="duo">
                 <asp:Label class="login" runat="server" Text="Usuario"></asp:Label>
 
-                <asp:TextBox class="login" runat="server"></asp:TextBox>
+                <asp:TextBox class="login" runat="server" ID="tbaNick"></asp:TextBox>
             </div>
             <div class="duo">
 
@@ -18,30 +18,30 @@
             <div class="duo">
                 <asp:Label class="login" runat="server" Text="Nombre"></asp:Label>
 
-                <asp:TextBox class="login" runat="server"></asp:TextBox>
+                <asp:TextBox class="login" runat="server" ID="tbaNombre"></asp:TextBox>
             </div>
             <div class="duo">
                 <asp:Label class="login" runat="server" Text="Apellido"></asp:Label>
 
-                <asp:TextBox class="login" runat="server"></asp:TextBox>
+                <asp:TextBox class="login" runat="server" ID="tbaApellido"></asp:TextBox>
             </div>
         </div>
     <div class="login1">
             <div class="duo">
                 <asp:Label class="login" runat="server" Text="Contraseña"></asp:Label>
 
-                <asp:TextBox class="login" runat="server"></asp:TextBox>
+                <asp:TextBox class="login" runat="server" ID="tbaPass"></asp:TextBox>
             </div>
             <div class="duo">
                 <asp:Label class="login" runat="server" Text="Contraseña"></asp:Label>
 
-                <asp:TextBox class="login" runat="server"></asp:TextBox>
+                <asp:TextBox class="login" runat="server" ID="tbaPass2"></asp:TextBox>
             </div>
         </div>
     <div class="boton">
 
 
-        <button type="button" class="btn btn-outline-success">Uneme al club</button>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
         
 
     </div>

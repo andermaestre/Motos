@@ -12,12 +12,13 @@ namespace PaginaMotos
 {
     public partial class HomePageAfterLogin : System.Web.UI.Page
     {
+        string strConnection = ConfigurationManager.ConnectionStrings["DAM_Compartido_DEVConnectionString"].ToString();
         protected void Page_Load(object sender, EventArgs e)
         {
-            string strConnection = ConfigurationManager.ConnectionStrings["DAM_Compartido_DEVConnectionString"].ToString();
+
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
-                string query = "SELECT meeting_name as Nombre,Desde,Hasta,Distancia,Date FROM Moto.Meetings";
+                string query = "SELECT meeting_name as Nombre,Desde,Hasta,Distancia,Fecha FROM Moto.Meetings ORDER BY MeetingID DESC";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
                 sqlConnection.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -25,6 +26,11 @@ namespace PaginaMotos
                 GridView1.DataSource = dr;
                 GridView1.DataBind();
             }
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/AddMeetingPage.aspx");
         }
     }
 }
