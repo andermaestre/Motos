@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,14 +19,41 @@ namespace PaginaMotos
 
         protected void entra()
         {
-            String respus, resppa;
-            //tbUser;//usuario introducido
-            string conection = ConfigurationManager.ConnectionStrings[""].ToString();
 
-            /*if (tbPass.Equals(resppa))
+            //tbUser;//usuario introducido
+            int id;
+            string strConnection = ConfigurationManager.ConnectionStrings["DAM_Compartido_DEVConnectionString"].ToString();
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
-                Response.Redirect("~/HomePageAfterLogin.aspx");
-            }*/
+                
+                string query = "Moto.IdDelNick";
+
+                SqlCommand cmd = new SqlCommand(query, sqlConnection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                
+                cmd.Parameters.AddWithValue("@Nick", tbUser.Text);
+
+
+
+                // string query2 = "EXEC Moto.ContraseXId " + id;
+                sqlConnection.Open();
+                SqlDataReader sqlreader = cmd.ExecuteReader();
+                if (sqlreader.HasRows)
+                {
+                   id = int.Parse(sqlreader[0].ToString());
+                }
+                tbPass.Text = id.ToString();
+
+                /*if (tbPass.Equals(resppa))
+                {
+                    Response.Redirect("~/HomePageAfterLogin.aspx");
+                }*/
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            entra();
         }
     }
 }

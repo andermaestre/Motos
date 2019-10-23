@@ -12,8 +12,8 @@
                 <asp:Label CssClass="login" runat="server" Text="Contraseña"></asp:Label>
 
                 <asp:TextBox CssClass="login" runat="server" ID="tbPass"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
             </div>
         </div>
-    <button type="button" class="boton" id="btn" onclick="">Entra en el Club</button>
-</asp:Content>
+    </asp:Content>
             
